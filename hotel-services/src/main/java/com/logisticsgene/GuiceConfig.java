@@ -24,8 +24,6 @@ public class GuiceConfig extends ResourceConfig
 		
 		GuiceIntoHK2Bridge guiceBridge = serviceLocator.getService(GuiceIntoHK2Bridge.class); 
 		
-		System.out.println(servletContext.getAttribute(Injector.class.getName()));
-		
 		guiceBridge.bridgeGuiceInjector(HotelServiceGuiceServletContextListener.injector);
 		
 		System.out.println("Registered injectables...");		

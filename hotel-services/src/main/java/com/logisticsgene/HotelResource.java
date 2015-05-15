@@ -16,11 +16,8 @@ import com.logisticsgene.repository.HotelRepository1;
 @Path("hotels")
 public class HotelResource {
 
-	//private HotelRepository hotelRepository = new HotelRepositoryStub();	
 	private HotelRepository hotelRepository;
 	private HotelRepository1 hotelRepository1;
-	
-	//@Inject HotelRepository hotelRepository;
 	
 	@Inject
 	public HotelResource(HotelRepository repository, HotelRepository1 repo) {

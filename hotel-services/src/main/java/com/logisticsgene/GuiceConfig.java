@@ -16,8 +16,6 @@ public class GuiceConfig extends ResourceConfig
 	@Inject 
 	public GuiceConfig(ServiceLocator serviceLocator, ServletContext servletContext) {
 		
-		System.out.println("Searching injectables...");
-		
 		packages(this.getClass().getPackage().getName());
 		
 		System.out.println("Registering injectables...");
@@ -28,10 +26,9 @@ public class GuiceConfig extends ResourceConfig
 		
 		System.out.println(servletContext.getAttribute(Injector.class.getName()));
 		
-		guiceBridge.bridgeGuiceInjector(HotelServiceGuiceServletContextListener.injector);//(HotelServiceGuiceServletContextListener.injector);
+		guiceBridge.bridgeGuiceInjector(HotelServiceGuiceServletContextListener.injector);
 		
-		System.out.println("Registered injectables...");
-		
+		System.out.println("Registered injectables...");		
 	}
 	
 }

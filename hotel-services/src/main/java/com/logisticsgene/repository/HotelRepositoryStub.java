@@ -27,11 +27,7 @@ public class HotelRepositoryStub implements HotelRepository {
 	@Override
 	public List<Hotel> getAllHotels() {
 		
-		//List<Hotel> hotels = new ArrayList<Hotel>();
-		
 		Reader rd = null;
-		
-		System.out.println("Reading SqlMapConfig file.....");
 		
 		try {
 			rd = Resources.getResourceAsReader("SqlMapConfig.xml");
@@ -40,12 +36,8 @@ public class HotelRepositoryStub implements HotelRepository {
 			//e1.printStackTrace();
 		}
 	    
-		System.out.println("Building SqlMapClient ....." + rd);
-		
 		SqlMapClient smc = SqlMapClientBuilder.buildSqlMapClient(rd);
-	      
-		System.out.println("Building SqlMapClient Done");
-		
+	    
 	    List<Hotel> ems = null;
 
 	    try {
@@ -60,42 +52,7 @@ public class HotelRepositoryStub implements HotelRepository {
 			// TODO Auto-generated catch block
 	    	//e.printStackTrace();
 	    };
-	      
-	      //Hotel em = null;
-			
-	      /*for (Hotel e : ems) {
-	         System.out.print("  " + e.getName());
-	         System.out.print("  " + e.getAddress());	          
-	         System.out.println("");
-	      } */   
-
-	    System.out.println("Records Read Successfully ");
-	      
-	    return ems;
-
-		/*
-		for (int i = 0; i < 100; i++) {
-			
-			Hotel hotel = new Hotel();
-			hotel.setName("Lemon Tree - " + i);
-			hotel.setAddress("Hitech City");
-			
-			hotels.add(hotel);
-		}
-		
-		Hotel hotel = new Hotel();
-		hotel.setName("Lemon Tree");
-		hotel.setAddress("Hitech City");
-		
-		hotels.add(hotel);
-			
-		Hotel hotel2 = new Hotel();
-		hotel2.setName("Taj Banjara");
-		hotel2.setAddress("Banjara Hills");
-		
-		hotels.add(hotel2);
-		
-		return hotels;*/
+	    	      
+	    return ems;		
 	}
-	
 }
